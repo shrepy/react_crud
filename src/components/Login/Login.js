@@ -21,7 +21,7 @@ const Login=()=>{
     const[eye,seteye]=useState(true);
     const[pass,setpass]=useState("password");
     
-    
+
     const inputEvent=(event)=>{
     const name=event.target.name;
     const value=event.target.value;
@@ -91,7 +91,7 @@ const Login=()=>{
                             <form onSubmit={SubmitForm}>
     
                                 <div className="input_text">
-                                    <input className={` ${warnemail ? "warning" : "" }`} type="text" placeholder="Enter Email" name="email" value={warnemail} onChange={(e)=>{setwarnemail(e.target.value)}} />
+                                    <input className={` ${warnemail ? "warning" : "" }`} type="text" placeholder="Enter Email" name="email"   value={warnemail} onChange={(e)=>{setwarnemail(e.target.value)}} />
                                     <p className={` ${danger ? "danger" : "" }`}><i className="fa fa-warning"></i>Please enter a valid email address.</p>
                                 </div>
                                 <div className="input_text">

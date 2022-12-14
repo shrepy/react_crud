@@ -35,7 +35,20 @@ describe("SignUpPage", ()=> {
 
         const fname = screen.getByTestId("fullName")
         await user.type(fname,"Shreyansh")
-        expect(fname).toHaveValue("Shreyansh")
+        expect(fname).toHaveValue("Shreyansh");
+
+        const emailElement = screen.getByTestId("email")
+        await user.type(emailElement,"sv@sass.com")
+        expect(emailElement).toHaveValue("sv@sass.com")
+
+        const passwordElement = screen.getByTestId("password")
+        await user.type(passwordElement,"123456")
+        expect(passwordElement).toHaveValue("123456")
+
+        const confirmPassElement = screen.getByTestId("confirm-password")
+        await user.type(confirmPassElement,"123456")
+        expect(confirmPassElement).toHaveValue("123456")
+    
         
     })
 

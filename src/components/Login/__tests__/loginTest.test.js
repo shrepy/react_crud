@@ -47,6 +47,12 @@ describe('Login',()=>{
         const altTextGoogle = screen.getByAltText('google logo')
         expect(altTextGoogle).toBeInTheDocument();
 
+        const altTextApple = screen.getByAltText('apple logo')
+        expect(altTextApple).toBeInTheDocument();
+
+        const altTextFb = screen.getByAltText('fb logo')
+        expect(altTextFb).toBeInTheDocument();
+
         const containerDiv = screen.getByTitle("containerDiv")
         expect(containerDiv).toBeInTheDocument();
 

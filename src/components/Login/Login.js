@@ -109,8 +109,8 @@ const Login=()=>{
                             </div>
                             <div className="boxes">
                                 <span><img src="https://imgur.com/XnY9cKl.png" alt="google logo"/></span>
-                                <span><img src="https://imgur.com/ODlSChL.png" /></span>
-                                <span><img src="https://imgur.com/mPBRdQt.png" /></span>
+                                <span><img src="https://imgur.com/ODlSChL.png" alt="apple logo"/></span>
+                                <span><img src="https://imgur.com/mPBRdQt.png" alt="fb logo"/></span>
                             </div>
                         </div>
                     </div>

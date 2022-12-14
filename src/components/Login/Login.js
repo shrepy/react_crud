@@ -8,7 +8,6 @@ import PostSlice from './LoginCheck'
 const Login=()=>{
 
     const{useState}=React;
-    const userData = useSelector(state=> state.auth.userData)
     const[inputs,setinputs]=useState({
     email:"",
     password:""

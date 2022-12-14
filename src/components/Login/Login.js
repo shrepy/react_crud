@@ -71,11 +71,11 @@ const Login=()=>{
     
         return(
         <>
-            <div className="container">
+            <div className="container" data-testid="Login-Container" title="containerDiv">
                 <div className="card">
                     <div className="form">
                         <div className="left-side">
-                            <img src="https://imgur.com/XaTWxJX.jpg" />
+                            <img src="https://imgur.com/XaTWxJX.jpg" alt="Girl Sitting on Floor"/>
                         </div>
     
                         <div className="right-side">
@@ -112,7 +112,7 @@ const Login=()=>{
                                 <p>or signin with</p>
                             </div>
                             <div className="boxes">
-                                <span><img src="https://imgur.com/XnY9cKl.png" /></span>
+                                <span><img src="https://imgur.com/XnY9cKl.png" alt="google logo"/></span>
                                 <span><img src="https://imgur.com/ODlSChL.png" /></span>
                                 <span><img src="https://imgur.com/mPBRdQt.png" /></span>
                             </div>

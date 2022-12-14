@@ -35,10 +35,32 @@ describe('Login',()=>{
         const paragraphText = screen.getByText('Not a member?')
         expect(paragraphText).toBeInTheDocument();
         
-        const otherText = screen.getByText('Please enter a valid email address.')
+        // const otherText = screen.getByText((content)=>content.startsWith('Hello'))
+        // const otherText = screen.getByText(/Hello/)   // Substring Match Using RegEx
+        // const otherText = screen.getByText(/hello/i) // ignore case
+        const otherText = screen.getByText(/^hello Again!$/i)  // Full string match by RegEx
         expect(otherText).toBeInTheDocument();
 
+        const altText = screen.getByAltText('Girl Sitting on Floor')
+        expect(altText).toBeInTheDocument();
 
+        const altTextGoogle = screen.getByAltText('google logo')
+        expect(altTextGoogle).toBeInTheDocument();
+
+        const containerDiv = screen.getByTitle("containerDiv")
+        expect(containerDiv).toBeInTheDocument();
+
+        const LoginContainer = screen.getByTestId('Login-Container')
+        expect(LoginContainer).toBeInTheDocument()
+
+        const textBox = screen.getByRole('textbox')
+        expect(textBox).toBeInTheDocument()
+
+
+        const buttonElement = screen.getByRole("button",{
+            name:"Register Now"
+        })
+        expect(buttonElement).toBeInTheDocument()
         //To run this go to the email field and paste this (" defaultValue={"sv@sass.com"} ") and remove value={warnemail}
         // const displayValue = screen.getByDisplayValue("sv@sass.com")
         // expect(displayValue).toBeInTheDocument();

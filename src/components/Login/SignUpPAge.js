@@ -1,5 +1,5 @@
 import { Button } from "bootstrap";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { authActions, RegisterUser } from "../../store/authSlice";
@@ -7,7 +7,7 @@ import authPageSet, { pageActions } from "../../store/loginSignupPage";
 
 
 const SignUpPAge=()=>{
-    const{useState}=React;
+    // const{useState}=React;
     
     const[email,setemail]=useState("");
     const[name,setname]=useState("");
@@ -106,24 +106,24 @@ const Started=(e)=>{
                        <h6>Take less than 10 minutes to fill out all the information needed to register your buisness.</h6>
                   </div>
                   <div className="input_text">
-                      <input type="text" className={`${warning_name ? "input_warning" : ""}`} value={name} onChange={input_name} required />
+                      <input data-testid="fullName" type="text" className={`${warning_name ? "input_warning" : ""}`} value={name} onChange={input_name} required />
                       <label>Full name</label> 
                       <span>{warning_name}</span> 
                   </div>
                   <div className="input_text">
-                      <input type="text" className={`${warning_email ? "input_warning" : ""}`} value={email} onChange={input_email} required/>
+                      <input type="text" data-testid="email" className={`${warning_email ? "input_warning" : ""}`} value={email} onChange={input_email} required/>
                       <label>Email</label>
                       <span>{warning_email}</span>
                   </div>
                   
                   <div className="input_text">
-                      <input type={inputtext} className={`${warning ? "warning" : ""} ${warning_password ? "input_warning" : ""}`} value={password} onChange={input_password} required/>
+                      <input type={inputtext} data-testid="password" className={`${warning ? "warning" : ""} ${warning_password ? "input_warning" : ""}`} value={password} onChange={input_password} required/>
                       <label>Password</label>
                       <span>{warning_password}</span>
                       <i onClick={Eye} className={`fa ${eye ? "fa-eye-slash" : "fa-eye"}`}></i>
                   </div>
                   <div className="input_text">
-                      <input type={inputtext} className={`${warning ? "warning" : ""} ${warning_password ? "input_warning" : ""}`} value={confirmPassword} onChange={input_Confirm_password} required/>
+                      <input type={inputtext} data-testid="confirm-password" className={`${warning ? "warning" : ""} ${warning_password ? "input_warning" : ""}`} value={confirmPassword} onChange={input_Confirm_password} required/>
                       <label>Confirm Password</label>
                       <span>{warning_password}</span>
                       <i onClick={Eye} className={`fa ${eye ? "fa-eye-slash" : "fa-eye"}`}></i>

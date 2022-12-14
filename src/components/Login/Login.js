@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authActions, LoginCheck2 } from "../../store/authSlice";
 import { pageActions } from "../../store/loginSignupPage";
 import LoginCheck from "./LoginCheck";
@@ -8,7 +8,7 @@ import PostSlice from './LoginCheck'
 const Login=()=>{
 
     const{useState}=React;
-    
+    const userData = useSelector(state=> state.auth.userData)
     const[inputs,setinputs]=useState({
     email:"",
     password:""
@@ -52,12 +52,9 @@ const Login=()=>{
     setwarnpass(false);
     // dispatch(PostSlice.LoginCheck(loginData))
 
-    dispatch(pageActions.welcomePage())
     dispatch(LoginCheck2(loginData))
-    
-    // dispatch(authActions.login(loginData))
-    if (localStorage.getItem["headers"]){
-    }
+    dispatch(pageActions.welcomePage())
+   
     if(inputs.email.length<1){ setdanger(false); } if(inputs.email=="" ){ setwarnemail(true); } else if(inputs.password=="" ){ setwarnpass(true); } else{ alert("Logged in Successfully"); } }; const Eye=()=>{
         if(pass=="password"){
         setpass("text");

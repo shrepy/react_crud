@@ -21,7 +21,7 @@ const Login=()=>{
     const[eye,seteye]=useState(true);
     const[pass,setpass]=useState("password");
     
-    
+
     const inputEvent=(event)=>{
     const name=event.target.name;
     const value=event.target.value;
@@ -71,11 +71,11 @@ const Login=()=>{
     
         return(
         <>
-            <div className="container">
+            <div className="container" data-testid="Login-Container" title="containerDiv">
                 <div className="card">
                     <div className="form">
                         <div className="left-side">
-                            <img src="https://imgur.com/XaTWxJX.jpg" />
+                            <img src="https://imgur.com/XaTWxJX.jpg" alt="Girl Sitting on Floor"/>
                         </div>
     
                         <div className="right-side">
@@ -91,7 +91,7 @@ const Login=()=>{
                             <form onSubmit={SubmitForm}>
     
                                 <div className="input_text">
-                                    <input className={` ${warnemail ? "warning" : "" }`} type="text" placeholder="Enter Email" name="email" value={warnemail} onChange={(e)=>{setwarnemail(e.target.value)}} />
+                                    <input className={` ${warnemail ? "warning" : "" }`} type="text" placeholder="Enter Email" name="email"   value={warnemail} onChange={(e)=>{setwarnemail(e.target.value)}} />
                                     <p className={` ${danger ? "danger" : "" }`}><i className="fa fa-warning"></i>Please enter a valid email address.</p>
                                 </div>
                                 <div className="input_text">
@@ -112,7 +112,7 @@ const Login=()=>{
                                 <p>or signin with</p>
                             </div>
                             <div className="boxes">
-                                <span><img src="https://imgur.com/XnY9cKl.png" /></span>
+                                <span><img src="https://imgur.com/XnY9cKl.png" alt="google logo"/></span>
                                 <span><img src="https://imgur.com/ODlSChL.png" /></span>
                                 <span><img src="https://imgur.com/mPBRdQt.png" /></span>
                             </div>

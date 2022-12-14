@@ -131,7 +131,7 @@ const Started=(e)=>{
                   <div className="button">
                   <button onClick={Started} >Get Started</button>
                   <h6>By signing up you are agreeing to our</h6>
-                  <a href="#">Terms and Condition</a>
+                  <a data-testid="link" href="#">Terms and Condition</a>
                   </div>
               </div>
           

@@ -61,6 +61,8 @@ describe('Login',()=>{
             name:"Register Now"
         })
         expect(buttonElement).toBeInTheDocument()
+
+        
         //To run this go to the email field and paste this (" defaultValue={"sv@sass.com"} ") and remove value={warnemail}
         // const displayValue = screen.getByDisplayValue("sv@sass.com")
         // expect(displayValue).toBeInTheDocument();

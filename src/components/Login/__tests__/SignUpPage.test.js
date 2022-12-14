@@ -21,6 +21,9 @@ describe("SignUpPage", ()=> {
 
         const buttonElement = screen.getByRole('button', {  name: /get started/i})
         expect(buttonElement).toBeInTheDocument();
+
+        const headingElement = screen.getByRole('heading', {  name: /take less than 10 minutes to fill out all the information needed to register your buisness\./i})
+        expect(headingElement).toBeInTheDocument()
     })
     
     test('input element rendered', async() => {
@@ -36,7 +39,7 @@ describe("SignUpPage", ()=> {
         
     })
 
-    test('input element rendered', async() => {
+    test('input elements tab is rendered', async() => {
         store = mockStore(initialState)
         // render(<SignUpPAge/>,{
         //     wrapper:Provider(store={store})
@@ -58,5 +61,16 @@ describe("SignUpPage", ()=> {
         expect(passwordElement).toHaveFocus()
         await user.tab()
         expect(confirmPassElement).toHaveFocus()
+    })
+
+    test('input elements tab is rendered', async() => {
+        store = mockStore(initialState)
+        render(<Provider store={store}><SignUpPAge/></Provider>)
+
+        const loginButton = screen.getByRole('button', {  name: /log in/i})
+        expect(loginButton).toBeInTheDocument();
+
+        const linkElement = screen.getByRole('link', {  name: /terms and condition/i})
+        expect(linkElement).toBeInTheDocument();
     })
 })

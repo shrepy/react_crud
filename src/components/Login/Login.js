@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { authActions, LoginCheck2 } from "../../store/authSlice";
+import React from "react";
+import { useDispatch } from "react-redux";
+import {  LoginCheck2 } from "../../store/authSlice";
 import { pageActions } from "../../store/loginSignupPage";
-import LoginCheck from "./LoginCheck";
-import PostSlice from './LoginCheck'
 
 const Login=()=>{
 

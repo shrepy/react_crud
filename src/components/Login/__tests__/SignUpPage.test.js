@@ -1,20 +1,20 @@
 // import { screen, render } from "../../../test-utils";
-import { screen, render } from "@testing-library/react";
+import { screen, render } from "../../../test-utils";
 import SignUpPAge from "../SignUpPAge";
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import user from "@testing-library/user-event";
 
-describe("SignUpPage", ()=> {
-    const initialState = { output: 10 };
-    const mockStore = configureStore();
-    let store;
+describe.only("SignUpPage", ()=> {
+    // const initialState = { output: 10 };
+    // const mockStore = configureStore();
+    // let store;
 
 
     test('SignUpPage rendered correctly', () => {
-        store = mockStore(initialState)
-        render(<Provider store={store}><SignUpPAge/></Provider>)
-
+        // store = mockStore(initialState)
+        // render(<Provider store={store}><SignUpPAge/></Provider>)
+        render(<SignUpPAge/>)
 
         const divElement = screen.getByRole('heading', {  name: /bric/i})
         expect(divElement).toBeInTheDocument();
@@ -27,8 +27,9 @@ describe("SignUpPage", ()=> {
     })
     
     test('input element rendered', async() => {
-        store = mockStore(initialState)
-        render(<Provider store={store}><SignUpPAge/></Provider>)
+        render(<SignUpPAge/>)
+        // store = mockStore(initialState)
+        // render(<Provider store={store}><SignUpPAge/></Provider>)
         // user.setup()
         // const nameElement = screen.getByLabelText("Full name")
         // expect(nameElement).toHaveTextContent("");
@@ -53,11 +54,12 @@ describe("SignUpPage", ()=> {
     })
 
     test('input elements tab is rendered', async() => {
-        store = mockStore(initialState)
+        render(<SignUpPAge/>)
+        // store = mockStore(initialState)
         // render(<SignUpPAge/>,{
         //     wrapper:Provider(store={store})
         // })
-        render(<Provider store={store}><SignUpPAge/></Provider>)
+        // render(<Provider store={store}><SignUpPAge/></Provider>)
         // user.setup()
 
         const fname = screen.getByTestId("fullName")
@@ -77,8 +79,9 @@ describe("SignUpPage", ()=> {
     })
 
     test('input elements tab is rendered', async() => {
-        store = mockStore(initialState)
-        render(<Provider store={store}><SignUpPAge/></Provider>)
+        render(<SignUpPAge/>)
+        // store = mockStore(initialState)
+        // render(<Provider store={store}><SignUpPAge/></Provider>)
 
         const loginButton = screen.getByRole('button', {  name: /log in/i})
         expect(loginButton).toBeInTheDocument();

@@ -1,9 +1,11 @@
-import { keyboard } from '@testing-library/user-event/dist/keyboard'
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
+import Counter from '../count/Counter'
 import Logout from '../Login/Logout'
 
 function WelcomePage(props) {
+  const navigate = useNavigate()
   const userData = useSelector((state)=>state.auth.userData)
   const data = userData.data.data
   // const data =  props
@@ -18,6 +20,8 @@ function WelcomePage(props) {
         <li> Email : {data.email}</li>
         <li> Uid : {data.uid}</li>
       </ul>
+      {/* <button onClick={()=>navigate('counter')}>Go to Counter Page</button> */}
+      <Counter/>
     </div>
   )
 }

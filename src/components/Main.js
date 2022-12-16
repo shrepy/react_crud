@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import authSlice from '../store/authSlice'
+import Counter from './count/Counter'
 import Login from './Login/Login'
 import SignUpPAge from './Login/SignUpPAge'
 import WelcomePage from './WelcomePage/WelcomePage'
@@ -17,6 +18,7 @@ function Main() {
     <div>
     {loginPage === "LOGINPAGE" ?  <Login/> : null}
     {loginPage === 'SIGNUPPAGE' ?  <SignUpPAge/> : null}
+    {loginPage === 'COUNTERPAGE' ? <Counter/> : null}
     {isLoggedIn && <WelcomePage/>}
     </div>
   )

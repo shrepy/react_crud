@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
+import {authActions}  from '../../store/authSlice'
+import { pageActions } from '../../store/loginSignupPage'
 
 const Counter = () => {
     const [count, setCount] = useState(0)
     const [amount, setamount] = useState(0)
     // const navigate = useNavigate()
+    const dispatch = useDispatch()
 
+    useEffect(()=>{
+      dispatch(authActions.logout())
+    },[])
   return (
     <>
     {/* <button onClick={()=>navigate('')}>Go To main page</button> */}

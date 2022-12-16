@@ -1,14 +1,20 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
+import { authActions } from '../../store/authSlice'
+import { pageActions } from '../../store/loginSignupPage'
 import Counter from '../count/Counter'
 import Logout from '../Login/Logout'
 
 function WelcomePage(props) {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
+  const dispatch = useDispatch()
   const userData = useSelector((state)=>state.auth.userData)
   const data = userData.data.data
-  // const data =  props
+  const handleEvent = () => {
+    // const data =  props
+    dispatch(pageActions.counterPage())
+  } 
   debugger
   return (
     <div>
@@ -20,8 +26,8 @@ function WelcomePage(props) {
         <li> Email : {data.email}</li>
         <li> Uid : {data.uid}</li>
       </ul>
-      {/* <button onClick={()=>navigate('counter')}>Go to Counter Page</button> */}
-      <Counter/>
+      <button onClick={handleEvent}>Go to Counter Page</button>
+      {/* <Counter/> */}
     </div>
   )
 }

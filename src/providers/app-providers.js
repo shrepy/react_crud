@@ -6,6 +6,9 @@ const theme = createTheme({
         mode:'dark',
     },
 })
+
+
+
 export const AllTheProviders = ({children}) => {
     return (
       <Provider store={store}>

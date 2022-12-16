@@ -16,6 +16,9 @@ const authPageSet = createSlice({
         getLogout(state){
             state.loginPage = 'LOGINPAGE'
         },
+        counterPage(state){
+            state.loginPage = 'COUNTERPAGE'
+        }
     }
 })
 
